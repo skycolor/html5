@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0" />
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Expires" content="-1">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>520爱May节，有爱消消乐</title>
+		<link href="http://img1.wushang.com/img/2014/12/18/2810436.png" rel="shortcut icon" type="image/x-icon">
+		<link href="http://img1.wushang.com/img/2014/12/18/2810436.png" rel="icon" type="image/x-icon">
+		<link href="http://img1.wushang.com/img/2014/12/18/2810436.png" rel="Bookmark" type="image/x-icon">
+		<link type="text/css" href="css/game_base.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="js/game_base.js"></script>
+		<script type="text/javascript" src="js/createjs-2013.12.12.min.js"></script>
+		<script type="text/javascript" src="js/createjs_game.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+
+		<style type="text/css">
+			.follow {
+				z-index: 100;
+				position: absolute;
+				left: -500px;
+				bottom: 0px;
+				width: 20%;
+				opacity: 0;
+			}
+			
+			.follow img {
+				width: 100%
+			}
+			
+			.moreGames {
+				z-index: 100;
+				position: absolute;
+				bottom: 10px;
+				margin-left: auto;
+				margin-right: auto;
+				width: 100%;
+				text-align: center;
+			}
+			
+			.moreGames a {
+				font: 11px Arial;
+				text-decoration: none;
+				background-color: #C0C0C0;
+				color: #FFFFFF;
+				padding: 2px 10px 2px 10px;
+				border-radius: 8px;
+				-webkit-border-radius: 8px;
+			}
+			#share{
+				position: fixed; 
+				z-index: 9999; 
+				top: 0; 
+				left: 0;
+				height: 100%;
+				width: 100%;
+				background: url(img/share.png) no-repeat top left;
+				background-size: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id="stage">
+			您的浏览器不支持html5, 请换用支持html5的浏览器
+		</canvas>
+		<div id="share" style="display: none">
+		</div>
+		<script language="javascript">
+			var mebtnopenurl = 'http://m.wushang.com';
+			window.shareData = {
+				"imgUrl": "http://img1.wushang.com/img/2014/10/22/2044656.jpg",
+				"timeLineLink": 'http://m.wushang.com',
+				"tTitle": "(●—●)武商网拍有爱情侣，赢大奖！",
+				"tContent": "(●—●)武商网拍有爱情侣，赢大奖！"
+			};
+			
+			$("#share").click(function(){
+				$("#share").css("display","none");
+			});
+
+			function goHome() {
+				window.location = mebtnopenurl;
+			}
+
+			function clickMore() {
+				if ((window.location + "").indexOf("f=zf", 1) > 0) {
+					window.location = mebtnopenurl;
+				} else {
+					goHome();
+				}
+			}
+
+			function dp_share() {
+				document.title = "520爱May节，有爱消消乐！这次得了" + myscore 
+						+ "分，超萌大白USB小风扇非我莫属咯！";
+				document.getElementById("share").style.display="";
+				window.shareData.tTitle = document.title;
+			}
+
+			function dp_Ranking() {
+				window.location = mebtnopenurl;
+			}
+
+			function showAd() {}
+
+			function hideAd() {}
+			document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+				WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+					WeixinJSBridge.invoke('sendAppMessage', {
+						"img_url": window.shareData.imgUrl,
+						"link": window.shareData.timeLineLink,
+						"desc": window.shareData.tContent,
+						"title": window.shareData.tTitle
+					}, onShareComplete);
+				});
+				WeixinJSBridge.on('menu:share:timeline', function(argv) {
+					WeixinJSBridge.invoke('shareTimeline', {
+						"img_url": window.shareData.imgUrl,
+						"img_width": "640",
+						"img_height": "640",
+						"link": window.shareData.timeLineLink,
+						"desc": window.shareData.tContent,
+						"title": window.shareData.tTitle
+					}, onShareComplete);
+				});
+			}, false);
+		</script>
+
+		<script type="text/javascript">
+			var myData = {
+				gameid: "ksiphone6"
+			};
+
+			function dp_submitScore(score) {
+				myscore=score;
+				myData.score = score;
+				myData.scoreName = score+"对";
+			}
+		</script>
+		<script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-46876322-1', 'wushang.com'); ga('send', 'pageview'); </script> <div style="display:none;"><script type="text/javascript"> var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://"); document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Ff138bfb4b2c468dc2b96bc908c6eecb2' type='text/javascript'%3E%3C/script%3E")); </script></div>
+	</body>
+</html>

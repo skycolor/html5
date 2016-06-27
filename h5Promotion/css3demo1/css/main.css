@@ -1,0 +1,242 @@
+* {
+	padding: 0;
+	margin: 0
+}
+fieldset,
+img {
+	border: 0
+}
+:focus {
+	outline: 0
+}
+body {
+	line-height: 1.5
+}
+html,
+body,
+.wrapper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background: #e6e3e1
+}
+#slide {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%
+}
+.slidePage {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	-webkit-transition: all 1.5s ease
+}
+.slideMain {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	overflow: hidden;
+	width: 320px;
+	height: 480px;
+	margin: auto;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%)
+}
+.slidePage .page {
+	position: absolute;
+	top: 94%;
+	left: 45%;
+	width: 45px;
+	height: 25px;
+	overflow: hidden
+}
+.slidePage .page img {
+	width: 90%;
+	-webkit-animation: slide 1.5s infinite linear;
+	-moz-animation: slide 1.5s infinite linear;
+	-o-animation: slide 1.5s infinite linear;
+	animation: slide 1.5s infinite linear
+}
+.slideQueue .slidePage {
+	-webkit-transform: translateY(-100%)
+}
+.slideQueue .in {
+	-webkit-transform: translateY(0)
+}
+.slideQueue .in~.slidePage {
+	-webkit-transform: translateY(100%)
+}
+.slidePullout .slidePage {
+	-webkit-transform: translate3d(0, -100%, 0)
+}
+.onload .slideMain {
+	background-size: 100% 100%
+}
+
+/*page 1*/
+#page01 .one {
+	width: 80%;
+	position: absolute;
+}
+#page01 .on .one {
+	-webkit-animation: fromLeft 1s ease-out;
+	-moz-animation: fromLeft 1s ease-out;
+	animation: fromLeft 1s ease-out;
+}
+
+#page01 .two {
+	width: 80%;
+	position: absolute;
+}
+
+#page01 .on .two {
+	-webkit-animation: rotating360 1s ease-out;
+	-moz-animation: rotating360 1s ease-out;
+	animation: rotating360 1s ease-out;
+}
+
+#page01 .three {
+	width: 80%;
+	position: absolute;
+}
+#page01 .on .three {
+	-webkit-animation: fromBottom 1s ease-out;
+	-moz-animation: fromBottom 1s ease-out;
+	animation: fromBottom 1s ease-out;
+}
+
+/*page 2*/
+#page02 .one {
+	width: 100%;
+	position: absolute;
+}
+#page02 .on .one {
+	-webkit-animation: fromLeft .8s ease-out;
+	-moz-animation: fromLeft .8s ease-out;
+	animation: fromLeft .8s ease-out;
+}
+#page02 .two {
+	width: 80%;
+	position: absolute;
+}
+#page02 .on .two {
+	-webkit-animation: fromRight 0.8s ease-out;
+	-moz-animation: fromRight 0.8s ease-out;
+	animation: fromRight 0.8s ease-out;
+}
+#page02 .three {
+	width: 80%;
+	position: absolute;
+}
+#page02 .on .three {
+	-webkit-animation: fromLeft 0.8s ease-out;
+	-moz-animation: fromLeft 0.8s ease-out;
+	animation: fromLeft 0.8s ease-out;
+}
+
+/*page 3*/
+#page03 .one {
+	width: 100%;
+	position: absolute;
+}
+#page03 .on .one {
+	-webkit-animation: rotatingY .8s ease-out;
+	-moz-animation: rotatingY .8s ease-out;
+	animation: rotatingY .8s ease-out;
+}
+#page03 .two {
+	width: 80%;
+	position: absolute;
+}
+#page03 .on .two {
+	-webkit-animation: rotatingY2 0.8s ease-out;
+	-moz-animation: rotatingY2 0.8s ease-out;
+	animation: rotatingY2 0.8s ease-out;
+}
+/*page 4*/
+#page04 .one {
+	width: 100%;
+	position: absolute;
+}
+#page04 .on .one {
+	-webkit-animation: fromUp 1.2s ease-out;
+	-moz-animation: fromUp 1.2s ease-out;
+	animation: fromUp 1.2s ease-out;
+}
+#page04 .two {
+	width: 80%;
+	position: absolute;
+}
+#page04 .on .two {
+	-webkit-animation: fromBottom 1.2s ease-out;
+	-moz-animation: fromBottom 1.2s ease-out;
+	animation: fromBottom 1.2s ease-out;
+}
+
+#page04 .three {
+	width: 100%;
+	position: absolute;
+}
+
+#page04 .three p{ 
+	font-family: "微软雅黑";
+}
+
+#page04 .on .three {
+	-webkit-animation: fromBottom 1.2s ease-out;
+	-moz-animation: fromBottom 1.2s ease-out;
+	animation: fromBottom 1.2s ease-out;
+}
+
+
+
+#aside {
+	position: absolute;
+	z-index: 999;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none
+}
+#music {
+	position: fixed;
+	bottom: 1%;
+	left: 0;
+	width: 90px;
+	height: 45px;
+	pointer-events: auto;
+	border-radius: 38px
+}
+#music::before {
+	content: ' ';
+	visibility: hidden;
+	opacity: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url(../img/music.png) no-repeat 0 0;
+	background-size: 90px 90px;
+	-webkit-transition: all 1s
+}
+#music::after {
+	content: ' ';
+	opacity: .8;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: url(../img/music.png) no-repeat left bottom;
+	background-size: 90px 90px;
+	-webkit-transition: opacity 1s
+}
+#music.on::after {
+	background-position: right bottom
+}

@@ -1,0 +1,19 @@
+@charset "utf-8";
+@media screen and (min-width:480px) and (max-width:639px){
+	body{ font-size:18px }
+	html{ font-size:18px}}
+
+@media screen and (min-width:321px) and (max-width:479px){
+	body{font-size:15px}
+	html{ font-size:15px}}
+
+@media screen (max-width:321px){
+	body{font-size:10px}
+	html{ font-size:1.px}}
+
+
+
+	
+	
+
+
