@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6 ieOld"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7 ieOld"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8 ieOld"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+		<meta name="format-detection" content="telephone=no">
+		<link rel="apple-touch-icon-precomposed" href="../res/images/logo_icon.png">
+		<link href="http://img1.wushang.com/img/2014/12/18/2810436.png" rel="shortcut icon" type="image/x-icon">
+		<link href="http://img1.wushang.com/img/2014/12/18/2810436.png" rel="icon" type="image/x-icon">
+		<link href="http://img1.wushang.com/img/2014/12/18/2810436.png" rel="Bookmark" type="image/x-icon">
+		<script>
+			if ("wView" in window) { //用于苹果设备自动播放
+				window.wView.allowsInlineMediaPlayback = "YES";
+				window.wView.mediaPlaybackRequiresUserAction = "NO";
+			}
+		</script>
+		<title>视频</title>
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="loadingContainer" id="loading">
+			<div class="perImg" id="perImg"></div>
+			<div class="processTxt" id="loadingTip">
+				0%
+			</div>
+		</div>
+		
+		<div class="videoContainer" id="videos" style="display: none;">
+			<div class="videoFrame1" style="display: none;">
+				<video width="640" height="1280" id="video1"  preload="auto"
+					poster="img/m_start.jpg" x-webkit-airplay="true" webkit-playsinline="true"
+					 src="http://oa8ehb9yo.bkt.clouddn.com/ml1.mp4"></video>
+			</div>
+			<div class="videoFrame2" style="display: none;">
+				<video width="640" height="1280" id="video2" preload="auto"
+					poster="" x-webkit-airplay="true" webkit-playsinline="true" src=""></video>
+			</div>
+		</div> 
+		<div class="page1 middle" style="display: none;">
+			<img src="img/m_middle.jpg" />
+		</div>
+		<div class="tip" style="display: none;">
+			<div class="quan outer" >
+				<img src="img/quan.png">
+				<div class="quan inner" >
+					<img src="img/quan.png" >
+				</div>
+			</div>
+		</div>
+		<div class="will" style="display: none;">
+			<img src="img/willing.png" />
+		</div>
+		<div class="end" style="display: none">
+			
+		</div>
+		<div class="androidBegin" style="display: none;">
+			<img src="img/m_start_android.png" />
+		</div>
+		<script type="text/javascript" src="js/zepto.min.js"></script>
+		<script type="text/javascript" src="js/lib.js"></script>
+		<script type="text/javascript" src="js/index.js"></script> 
+	</body>
+</html>

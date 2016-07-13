@@ -1,0 +1,63 @@
+/*public*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video, input { margin:0; padding:0; border:0; font-weight: normal; vertical-align:baseline;}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;}
+body {font-family:"Microsoft YaHei", Arial, Helvetica, sans-serif; background:#f5f5f5;}
+ol, ul { list-style:none;}
+em, i{font-style: normal;}
+img{width: 100%;}
+/*main*/
+html,body{height: 100%;overflow: hidden;}
+.loadingContainer{width: 100%;height: 100%;background: #333333;position: absolute;}
+.loadingContainer .perImg{
+    width: 115px;
+    height: 115px;
+    position: absolute;
+    top: 50%;
+	left: 50%;
+	transform: translate(-50% , -50%) ;
+	-webkit-transform: translate(-50% , -50%);
+	background-image: url(../img/loading.png);
+	background-size: 100% 100%;
+	transition: all .8s;
+}
+.loadingContainer .processTxt{color: #fff;position: absolute;width: 100px;height: 100px;text-align: center;line-height: 100px;
+	font-size: 25px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50% , -50%);
+	-webkit-transform: translate(-50% , -50%);
+}
+.middle{width: 100%;}
+
+.tip{position: absolute;top: 375px;left: 360px;}
+.quan{z-index: 99;width: 30px;height: 30px;position: absolute;left: 0px; top: 0px;}
+.tip .quan.outer{animation: outerAnimate 1s ease-out infinite;-webkit-animation: outerAnimate 1s ease-out infinite;}
+.tip .quan.inner{animation: innerAnimate 1s ease-out infinite;-webkit-animation: innerAnimate 1s ease-out infinite;}
+.will{position: absolute;top:335px;left: 115px;width: 100%;z-index: 3;}
+.androidBegin{width: 100%;height: 100%;position: absolute;top: 0;left: 0;}
+
+@keyframes outerAnimate {
+	0% {
+		transform: scale(0.8);
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1.2);
+		opacity: 0.2;
+	}
+}
+@-webkit-keyframes outerAnimate {
+	0% {
+		-webkit-transform: scale(0.8);
+		opacity: 0.6;
+	}
+	100% {
+		-webkit-transform: scale(1);
+		opacity: 0.15; 
+	}
+}
+.end{position: absolute;top: 0;left: 0;background-image: url(../img/end.jpg);background-size: 100% 100%;
+width:100%;height: 100%;}
+
+
+
