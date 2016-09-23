@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="cn">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>主会场-929-2016</title>
+    <link href="http://img1.wushang.com/img/2014/12/18/2810436.png" rel="shortcut icon" type="image/x-icon">
+    <link href="http://img1.wushang.com/img/2014/12/18/2810436.png" rel="icon" type="image/x-icon">
+    <link href="http://img1.wushang.com/img/2014/12/18/2810436.png" rel="Bookmark" type="image/x-icon">
+    <link href="publicBase.css" rel="stylesheet" type="text/css">
+    <link href="main.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<section class="wrapper">
+    <div class="banner">
+        <img src="929_2016/mainVenue_01.jpg">
+    </div>
+    <div class="timeBox">
+        <img src="929_2016/mainVenue_02.jpg">
+        <div class="time">
+            <div class="day">
+                <span id="day">
+                		<p class="front ico-2" id="dayF" ></p>
+                		<p class="back ico-3" id="dayB" ></p>
+                </span>
+            </div>
+            <div class="txt">天</div>
+            <div class="hour">
+                <span id="hour1">
+                		<p class="front" id="hour1F" ></p>
+                		<p class="back" id="hour1B" ></p>
+                </span>
+                <span id="hour2" >
+                		<p class="front" id="hour2F" ></p>
+                		<p class="back" id="hour2B" ></p>
+                </span>
+            </div>
+            <div class="txt">小时</div>
+            <div class="minute">
+                <span id="min1" >
+                		<p class="front" id="min1F" ></p>
+                		<p class="back" id="min1B" ></p>
+                </span>
+                <span id="min2" >
+                		<p class="front" id="min2F" ></p>
+                		<p class="back" id="min2B" ></p>
+                </span>
+            </div>
+            <div class="txt">分</div>
+            <div class="second">
+                <span id="sec1" >
+					<p class="front" id="sec1F" ></p>
+                		<p class="back" id="sec1B" ></p>
+                </span>
+                <span id="sec2" >
+                		<p class="front" id="sec2F" ></p>
+                		<p class="back" id="sec2B" ></p>
+                </span>
+            </div>
+            <div class="txt">秒</div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript" src="zepto.min.js" ></script>
+<script type="text/javascript" src="lib.js" ></script>
+<script>
+	$('.timeBox').countDown({
+		endTime : new Date('2016/09/29 00:00:00') ,
+		type : "Y"
+	});
+</script>
+</body>
+</html>
