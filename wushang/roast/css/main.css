@@ -1,0 +1,57 @@
+.mainBox{width: 100%;height: 9.24444444rem;background-image: url(../img/boxBg.jpg);background-size: 100% 100%;}
+.mainBox .unCookedChicken{position: absolute;top: 3.051852rem;left: 5.8666667rem;width: 4.9333333rem;height: 6.1925936rem;
+transform-origin:50% 50%;-webkit-transform-origin: 50% 50%;transition:all 1.4s ease;-webkit-transition: all 1.4s ease;}
+.mainBox .unCookedChicken.remove{transform:rotate(360deg) scale(0 , 0);-webkit-transform : rotate(360deg) scale(0 , 0);}
+.mainBox .cookedChicken{position: absolute;top: 4.162963rem;left: 4.4740741rem;width: 7.6740741rem;height: 4.3111111rem;
+transform-origin:50% 50%;-webkit-transform-origin: 50% 50%;transition:all 1s ease;-webkit-transition: all 1s ease;
+transform:scale(0 , 0) rotate(360deg);-webkit-transform : scale(0 , 0) rotate(360deg);}
+.mainBox .cookedChicken.show{transform:scale(1 , 1) rotate(0deg);-webkit-transform : scale(1 , 1) rotate(0deg);}
+
+.mainBox .start{position: absolute;top: 6.2962963rem;left: 4.6666667rem;width: 6.962963rem;height: 1.851852rem;
+text-align: center;overflow: hidden;z-index: 99;}
+.mainBox .start img{position: absolute;top: 0.37037rem;left: 0.51851852rem;width: 5.77777778rem;
+display: inline-block;transition:left .8s ease;-webkit-transition: left .8s ease;}
+.mainBox .start img.remove{left: 7.40741rem;}
+
+
+.mainBox .fire{position: absolute;top: 5.362963rem;left: 3.65925926rem;width: 8.93333333rem;height: 3.851852rem;overflow: hidden;}
+.mainBox .fire img.animate{animation: pulse 1.2s infinite;-webkit-animation: pulse 1.2s infinite;}
+.mainBox .littleFires{position: absolute;top: 2.281481rem;left: 4.42963rem;width: 7.40740741rem;height: 5.3925936rem;}
+.mainBox .little{position: absolute;animation: pulse 1.2s infinite;-webkit-animation: pulse 1.2s infinite;}
+.mainBox .little:nth-child(1){top: 3.1rem;left: 0.6rem;width: 3.3276354rem;height: 2.974359rem;}
+.mainBox .little:nth-child(2){top: 3.0rem;left: 3.3rem;width: 2.883951rem;height: 2.5777778rem;}
+.mainBox .little:nth-child(3){top: 1.6rem;left: 1.7rem;width: 2.5955556rem;height: 2.31999999rem;}
+.mainBox .little:nth-child(4){top: 1.75rem;left: 3.75rem;width: 2.162963rem;height: 1.9333333rem;}
+.mainBox .little:nth-child(5){top: 0.6rem;left: 2.8rem;width: 2.162963rem;height: 1.9333333rem;}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+
+
