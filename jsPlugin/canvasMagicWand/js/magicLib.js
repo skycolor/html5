@@ -11,7 +11,9 @@
 				w : 30 ,
 				h : 30 ,
 				aliveTimeMin : 50 ,
-				aliveTimeMax : 80
+				aliveTimeMax : 80 ,
+				vxRandom : 3 ,
+				vyRandom : 3
 			}
 		};
 		var opts = $.extend(true , defaults , options || {});
@@ -99,8 +101,8 @@
 		}
 		Star.prototype = {				//原型方法对象
 			_reset : function(direction , savePos){		//单个魔法棒星星初始化(参数为移动方向、当前移动点的位置)
-				this.vx = direction * (1 + Math.random()*3);
-				this.vy = 2 + Math.random()*3;
+				this.vx = direction * (1 + Math.random() * opts.imgObjParam.vxRandom);
+				this.vy = 1 + Math.random() * opts.imgObjParam.vyRandom;
 				this.x = direction == 1  ? getRandomFromScope(savePos.x , savePos.x + this.xScope) 
 						: getRandomFromScope(savePos.x - this.xScope , savePos.x);
 				this.y = getRandomFromScope(savePos.y , savePos.y + this.yScope);
