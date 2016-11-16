@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<title>魔法棒</title>
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body>
+		<script type="text/javascript" src="js/zepto.min.js" ></script>
+		<script type="text/javascript" src="js/magicLib.js" ></script>
+		<script>
+			window.magicWand({
+				ele : document.body ,
+				imgObjParam : {
+					w : 20 ,
+					h : 20 ,
+					aliveTimeMin : 20 ,
+					aliveTimeMax : 40
+				}
+			});
+		</script>
+	</body>
+</html>
