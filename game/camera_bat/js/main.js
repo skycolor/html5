@@ -1,7 +1,7 @@
 var Ν = {
         width: 640,
         I: 45
-};
+    };
 Ν.q = 1000 / Ν.I >> 0;
 "use strict";
 (function (exports, undefined) {
@@ -196,6 +196,7 @@ var Ν = {
             },
             vW: null,
             Me: function (a, V) {
+                console.log("cancel", this.S0.length);
                 for (var Ρ = 0, Τ = this.S0.length; Ρ < Τ; Ρ++) {
                     var І = this.S0[Ρ];
                     if (І.cancel != null) {
@@ -1121,7 +1122,7 @@ E.kl = {
             this.ar(Η, Ϻ);
             if (!this.paused && Η > 1) {
                 this.update(Η, Ϻ);
-                this.PΝ(Η, Ϻ);
+                this.PΝ(Η, Ϻ)
             }
             if (!this.Υz) {
                 clearTimeout(this.Ng)
@@ -1369,6 +1370,7 @@ var Ι = {
             }
             o.options = Β;
             o.src = o.src || o._;
+			console.dir(o.src);
             o.id = o.id || o.src || "id_" + (this.ΚϹ.length + 1);
             var G = o.type || this.jР;
             if (G) {
@@ -1386,6 +1388,8 @@ var Ι = {
                     o.src = o.src.substring(1)
                 }
                 o.src = this.ST + o.src;
+				console.dir(this.ST + o.src);
+				
             }
             o.Cf = isNaN(o.Cf) ? this.Cf : Number(o.Cf);
             o.QΥ = isNaN(o.QΥ) || o.QΥ === 0 ? 1 : Number(o.QΥ);
@@ -1592,6 +1596,7 @@ var Ι = {
             І.addEventListener("load", this.Υv);
             І.addEventListener("error", this.I$);
             І.src = this.src;
+			console.dir(I.src);
             this.Ϻ7 = true
         },
         Υv: function (Η) {
@@ -2225,6 +2230,7 @@ var t = {
             var М = document.getElementsByTagName("head")[0] || document.documentElement;
             var I = document.createElement("script");
             I.type = "text\/javascript";
+			console.dir(y);
             if (y) {
                 I.src = y;
                 I.defer = false;
@@ -3461,7 +3467,7 @@ var M = Best.hg.extend({
             Κ.globalAlpha = 1;
             var V = this.width - this.ng.width >> 1;
             var g = this.xϜ.height + 90;
-            //Κ.drawImage(this.ng, V, g, this.ng.width, this.ng.height);
+            Κ.drawImage(this.ng, V, g, this.ng.width, this.ng.height);
             if (this.Ε4) {
                 this.Ε4.PΝ(Κ, W, G)
             }
