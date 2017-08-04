@@ -1,0 +1,510 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*摇一摇 赛车版*/
+
+.shakeInitBg {
+  background: url(../images/bg1.jpg) center bottom no-repeat;
+  background-size: cover;
+}
+
+.pop-bg {
+  display: none;
+}
+
+.waitbox {
+  background: url(../images/bg1-2.png) center 50px no-repeat;
+}
+
+.waitbox .wtop {
+  text-indent: -9999px;
+  overflow: hidden;
+  background: none;
+}
+
+.code-left {
+  background: none;
+}
+
+.btn-goshake,
+.btn-goshake:hover {
+  display: block;
+  background: url(../images/btn1.png) no-repeat;
+  width: 339px;
+  height: 77px;
+  text-indent: -999px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.msg {
+  background: none;
+  border: none;
+}
+
+.shake-user-list {
+  padding-left: 20px;
+}
+
+/*倒计时*/
+.countdown {
+  left: 0;
+  margin: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7) url(../images/light1.png) center center no-repeat;
+  background-size: cover;
+}
+
+.stage-bg {
+  display: none;
+}
+
+.ptips3 {
+  display: none;
+}
+
+.shake-progress {
+  background: none;
+  width: 677px;
+  height: 501px;
+  padding: 0;
+  margin-top: 249px;
+}
+
+.shake-num-bg1 {
+  background: url(../images/time3.png) no-repeat;
+  width: 677px;
+  height: 501px;
+}
+
+.shake-num-bg2 {
+  background: url(../images/flag3.png) no-repeat;
+  width: 501px;
+  height: 376px;
+  position: absolute;
+  left: 50%;
+  margin-left: -250px;
+  top: -29px;
+}
+
+.shake-num-bg3 {
+  background: url(../images/time2.png) center top no-repeat;
+  width: 297px;
+  height: 340px;
+  position: absolute;
+  left: 215px;
+  top: -20px;
+  z-index: 10;
+}
+
+.shake-num {
+  background: none;
+  color: #f8dc02;
+  font-size: 148px;
+  text-shadow: 1px 1px #2c7442, 2px 2px #2c7442, 3px 3px #2c7442, 4px 4px #2c7442, 5px 5px #2c7442, -1px -1px #2c7442, -2px -2px #2c7442, -3px -3px #2c7442, -4px -4px #2c7442, -5px -5px #2c7442, -1px 1px #2c7442, -2px 2px #2c7442, -3px 3px #2c7442, -4px 4px #2c7442, -5px 5px #2c7442, 1px -1px #2c7442, 2px -2px #2c7442, 3px -3px #2c7442, 4px -4px #2c7442, 5px -5px #2c7442;
+  left: 50%;
+  margin-left: -114px;
+  top: 110px;
+  z-index: 11;
+}
+
+.shake-flag {
+  position: absolute;
+  left: 0;
+  margin: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+}
+
+.shake-flag .img1 {
+  background: url(../images/flag1.png) no-repeat;
+  width: 362px;
+  height: 363px;
+  position: absolute;
+  left: 50%;
+  margin-left: -101px;
+  top: 50%;
+  margin-top: -181px;
+}
+
+.shake-flag .img2 {
+  background: url(../images/flag2.png) no-repeat;
+  width: 362px;
+  height: 363px;
+  position: absolute;
+  right: 50%;
+  margin-right: -101px;
+  top: 50%;
+  margin-top: -181px;
+}
+
+.rotateUpLeft {
+  -webkit-animation: rotateUpLeft 2s ease forwards;
+}
+
+@-webkit-keyframes rotateUpLeft {
+  0%, 100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    opacity: 1;
+  }
+
+  50% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate3d(0, 0, 1, -90deg);
+    transform: rotate3d(0, 0, 1, -90deg);
+    opacity: 1;
+  }
+}
+
+.rotateUpRight {
+  -webkit-animation: rotateUpRight 2s ease forwards;
+}
+
+@-webkit-keyframes rotateUpRight {
+  0%, 100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    opacity: 1;
+  }
+
+  50% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate3d(0, 0, 1, 90deg);
+    transform: rotate3d(0, 0, 1, 90deg);
+    opacity: 1;
+  }
+}
+
+/*游戏进度条*/
+.shake-ing {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.shake-ing-top {
+  background: url(../images/bg3-1.jpg) center top no-repeat;
+  background-size: auto 100%;
+}
+
+.shake-ing-bottom {
+  background: url(../images/bg3-3.jpg) center bottom no-repeat;
+  background-size: auto 100%;
+}
+
+.shake-ing .wtop {
+  background: none;
+}
+
+.shake-ing .w4 {
+  background: url(../images/time.png) no-repeat;
+  width: 378px;
+  height: 162px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.shake-ing .w4 em {
+  width: 100px;
+  text-align: center;
+  font-size: 84px;
+  color: #f8dc02;
+  text-shadow: 1px 1px #2c7442, 2px 2px #2c7442, 3px 3px #2c7442, 4px 4px #2c7442;
+  position: absolute;
+  left: 163px;
+  bottom: 23px;
+}
+
+.car-race {
+  height: 482px;
+  background: url(../images/bg3-2.jpg) center center no-repeat;
+  background-size: 100% 100%;
+}
+
+.race-list {
+  width: 1024px;
+  height: 464px;
+  position: relative;
+  top: 7px;
+  margin: 0 auto;
+}
+
+.race-list .border {
+  background: url(../images/border.jpg?v=20161011) repeat-y;
+  width: 45px;
+  height: 100%;
+  position: absolute;
+  right: 84px;
+  top: 0;
+}
+
+.race-list li {
+  height: 77px;
+  position: relative;
+}
+
+.race-list li .paodao {
+  width: 737px;
+  height: 77px;
+  position: relative;
+}
+
+.race-list li .run {
+  width: 215px;
+  height: 106px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -53px;
+  transition: all .6s ease;
+}
+
+.race-list li .rank1 {
+  background: url(../images/rank1.png) right center no-repeat;
+  z-index: 1;
+}
+
+.race-list li .rank1 .ava {
+  left: 35px;
+  top: 25px;
+}
+
+.race-list li .rank2 {
+  background: url(../images/rank2.png) right center no-repeat;
+}
+
+.race-list li .rank2 .ava {
+  left: 39px;
+  top: 25px;
+}
+
+.race-list li .rank3 {
+  background: url(../images/rank3.png) right center no-repeat;
+  z-index: 2;
+}
+
+.race-list li .rank3 .ava {
+  left: 18px;
+  top: 26px;
+}
+
+.race-list li .rank4 {
+  background: url(../images/rank4.png) right center no-repeat;
+  z-index: 1;
+}
+
+.race-list li .rank4 .ava {
+  left: 34px;
+  top: 25px;
+}
+
+.race-list li .rank5 {
+  background: url(../images/rank5.png) right center no-repeat;
+}
+
+.race-list li .rank5 .ava {
+  left: 36px;
+  top: 25px;
+}
+
+.race-list li .rank6 {
+  background: url(../images/rank6.png) right center no-repeat;
+}
+
+.race-list li .rank6 .ava {
+  left: 39px;
+  top: 25px;
+}
+
+.race-list li .count {
+  width: 120px;
+  line-height: 77px;
+  text-align: center;
+  font-size: 36px;
+  color: #ff553c;
+  position: absolute;
+  left: 940px;
+  top: 0;
+  z-index: 1;
+}
+
+.race-list li .count span.shadow {
+  width: 120px;
+  line-height: 77px;
+  text-align: center;
+  font-size: 36px;
+  color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  -webkit-transform: translate(-1%, -10%) scaleY(1.5);
+}
+
+.race-list li .ava {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.race-list li .ava img {
+  width: 60px;
+  height: 60px;
+}
+
+/*结果页*/
+.shake-result {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  background: url(../images/bg4.jpg) center center no-repeat;
+  background-size: cover;
+}
+
+.top-list {
+  background: url(../images/bg4-2.png) center bottom no-repeat;
+  width: 1104px;
+  height: 536px;
+  padding-top: 102px;
+  margin: 0 auto;
+}
+
+.top-list li.num1 {
+  background: url(../images/num1.png) no-repeat;
+  width: 310px;
+  height: 497px;
+  left: 50%;
+  margin-left: -155px;
+  top: 75px;
+}
+
+.top-list li.num2 {
+  background: url(../images/num2.png) no-repeat;
+  width: 310px;
+  height: 447px;
+  left: 50%;
+  margin-left: -492px;
+  top: 125px;
+}
+
+.top-list li.num3 {
+  background: url(../images/num3.png) no-repeat;
+  width: 310px;
+  height: 417px;
+  left: 50%;
+  margin-left: 180px;
+  top: 156px;
+}
+
+.top-list li em {
+  display: none;
+}
+
+.top-list li img {
+  width: 73px;
+  height: 73px;
+  border-radius: 73px;
+  position: absolute;
+  left: 119px;
+  top: 98px;
+  border: none;
+}
+
+.top-list li span {
+  width: 250px;
+  height: auto;
+  text-align: center;
+  word-wrap: break-word;
+  font-size: 24px;
+  color: #fff;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  left: 50%;
+  margin-left: -125px;
+  top: 200px;
+}
+
+.other-rank {
+  width: 100%;
+  text-align: center;
+  background: url(../images/bg4-3.jpg) center center no-repeat;
+  background-size: 100% 100%;
+  border-top: 5px solid #b4ffff;
+  border-bottom: 5px solid #b4ffff;
+  margin-left: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.other-rank li {
+  display: inline-block;
+  float: none;
+  width: 140px;
+  height: 160px;
+  padding: 17px 0 0;
+}
+
+.other-rank li img {
+  width: 73px;
+  height: 73px;
+  border-color: #fff;
+}
+
+.logo {
+  top: auto;
+  bottom: 10px;
+}
+
+@media screen and (max-height: 768px) {
+  .waitbox {
+    background-position: center 30px;
+  }
+
+  .logo {
+    top: auto;
+  }
+
+  .other-rank {
+    margin-top: -100px;
+  }
+
+  .other-rank li {
+    height: 140px;
+    padding-top: 7px;
+  }
+
+  .other-rank li img {
+    width: 63px;
+    height: 63px;
+  }
+}
+
+@media screen and (max-height: 810px) {
+
+  .other-rank {
+    margin-top: -100px;
+  }
+
+}
+
+/* gaoz add */
+.btn-wrap2 {
+  padding-top: 45px;
+}
+
+.code-left {
+  padding: 0px 77px 50px;
+}
+
+.user-code {
+  padding: 37px 0 0;
+}
