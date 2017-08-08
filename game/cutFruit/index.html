@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="description" content="A simple HTML5 Template">
+<meta name="author" content="dron">
+<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animate.css">
+<title></title>
+<!--[if lt IE 9]><script>document.createElement("canvas");</script><![endif]-->
+</head>
+<body>
+<!--游戏加载-->
+<!--<div class="pageLoading"><img class="load_img" src="images/loading.png"/></div>-->
+<div id="extra"></div>
+<!--第一页(封面)-->
+<!--<div class="first_page">
+	<img class="p1_1 wow bounceInDown" data-wow-delay="0s" data-wow-duration="2s" src="images/p1/logo.png">
+	<img class="p1_2 wow bounceInUp" data-wow-delay="0.3s" data-wow-duration="2s" src="images/p1/left.png">
+	<img class="p1_3 wow bounceInDown" data-wow-delay="0.6s" data-wow-duration="2s" src="images/p1/qie.png">
+</div>-->
+<!--第二页(开始页)-->
+<div class="start_page">
+	
+	<img class="p3_6 wow bounceInUp startBtn" data-wow-delay="0s" data-wow-duration="1.5s" src="images/p3/p3-7.png">
+</div>
+<!--第三页(加载页)-->
+<!--<div class="loading_page">
+	<img class="p2_1 wow bounceIn move" data-wow-delay="0s" data-wow-duration="1.5s" src="images/p2/p2-1.png">
+	<img class="p2_2" src="images/p2/p2-2.gif">
+	<img class="p2_3 wow bounceInUp" data-wow-delay="0.6s" data-wow-duration="1.5s" src="images/p2/p2-3.png">
+	<img class="p2_4" src="images/p2/p2-4.png">
+</div>-->
+
+<!--第四页(游戏页)-->
+<div class="canvas_page">
+	<div id="view"></div>
+	<div id="desc">
+		<div id="browser"></div>
+	</div>
+	<!--倒计时-->
+	<div class="timer">
+		<span class="count"></span> ''
+	</div>
+</div>
+<!--第五页(失败页)-->
+<div class="failure_page">
+	<img class="p5_1 wow bounceInDown animated" data-wow-delay="0s" data-wow-duration="2s" src="images/p5/p5-1.png">
+	<div class="p5_6 wow bounceInDown animated" data-wow-delay="0s" data-wow-duration="2s" >
+		<img src="images/p5/total.png">
+		<div class="score"></div>
+	</div>
+	<div class="p5_7 wow bounceInDown animated" data-wow-delay="0s" data-wow-duration="2s" >
+		<img src="images/p5/all.png">
+		<div class="score"></div>
+	</div>
+	<img class="p5_3 wow bounceInUp viewBtn" data-wow-delay="0.2s" data-wow-duration="2s" src="images/p5/p5-3.png">
+	<img class="p5_5 wow bounceInUp againBtn" data-wow-delay="0.2s" data-wow-duration="2s" src="images/p7/p7-1.png">
+</div>
+<!--第五页(成功页)-->
+<div class="win_page">
+	<img class="p5_1 wow bounceInDown animated" data-wow-delay="0s" data-wow-duration="2s" src="images/p5/p5-1.png">
+	<div class="p5_6 wow bounceInDown animated" data-wow-delay="0s" data-wow-duration="2s" >
+		<img src="images/p5/total.png">
+		<div class="score"></div>
+	</div>
+	<div class="p5_7 wow bounceInDown animated" data-wow-delay="0s" data-wow-duration="2s" >
+		<img src="images/p5/all.png">
+		<div class="score"></div>
+	</div>
+	<img class="p5_3 wow bounceInUp viewBtn" data-wow-delay="0.2s" data-wow-duration="2s" src="images/p5/p5-3.png">
+	<img class="p5_5 wow bounceInUp againBtn" data-wow-delay="0.2s" data-wow-duration="2s" src="images/p7/p7-1.png">
+</div>
+<script src="scripts/jquery.min.js" ></script>
+<script src="scripts/ct-viewport.js" type="text/javascript"></script>
+<script src="scripts/all.js" ></script>
+<script src="scripts/vicky.js" ></script>
+<script src="scripts/wow.min.js" type="text/javascript"></script>
+<script src="scripts/msgbox.js" ></script>
+</body>
+</html>
