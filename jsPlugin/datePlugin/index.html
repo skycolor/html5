@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>日期控件临摹</title>
+		<link rel="stylesheet" href="css/datepicker.css" />
+		<link rel="stylesheet" href="css/WdatePicker.css" />
+		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<input id="test" />
+		<script>
+			jQuery.fn.dateControl = function(options) {
+				var def = {
+					nowDate: new Date(),
+					ele:undefined
+				};
+				var opts = jQuery.extend(def, options),
+					mainDate = $("#mainDate")[0];
+				if(!mainDate || typeof mainDate == "undefined"){
+					var strArr = ['<div class="WdateDiv" id="mainDate">','<div id="dpTitle">','<div class="NavImg NavImgll" id="yearDown">',
+					'<a></a></div><div class="NavImg NavImgl" id="monthDown">','<a></a></div>','<div style="float:left">',
+					'<input class="yminput" id="yearShow"></div>','<div style="float:left"><input class="yminput" id="monthShow">',
+					'</div><div class="NavImg NavImgrr" id="yearUp">','<a></a></div><div class="NavImg NavImgr" id="monthUp">',
+					'<a></a></div></div><div>','<table id="mainTab" class="WdayTable" width="100%" border="0" cellspacing="0" cellpadding="0">',
+					'<tr class="MTitle" align="center">','<td>日</td><td>一</td><td>二</td><td>三</td><td>四</td><td>五</td><td>六</td>',
+					'</tr></table></div><div id="dpQS"></div><div id="dpControl">','<input class="dpButton" id="dpClearInput" type="button" value="清空">',
+					'<input class="dpButton" id="dpTodayInput" type="button" value="今天">','<input class="dpButton" id="dpOkInput" type="button" value="确定">',
+					'</div></div>'];
+					$("body").append(strArr.join(""));
+				}else{
+					return
+				}
+				!(function(){
+					var nowDate = opts.nowDate,
+						year = nowDate.getFullYear(),
+						month = nowDate.getMonth() + 1,
+						dayH = nowDate.getDate(),
+						monthFirstDay = new Date(year, month - 1, 1).getDay(),
+						mainTab = $("#mainTab"),
+						rowNum = 6,
+						colNum = 7,
+						strArr = new Array(),
+						yearDown = $("#yearDown"),
+						yearUp = $("#yearUp"),
+						monthDown = $("#monthDown"),
+						monthUp = $("#monthUp"),
+						yearShow = $("#yearShow"),
+						monthShow = $("#dpClearInput");
+					
+					var DayTemplate = function() {
+						this.year = 0;
+						this.month = 0;
+						this.dayH = 0;
+						this.day = 0;
+						this.className;
+					}
+					DayTemplate.prototype = {
+						init: function(date) {
+							this.year = date.getFullYear();
+							this.month = date.getMonth() + 1;
+							this.dayH = date.getDate();
+							this.day = date.getDay();
+							if (this.year == year && this.month == month && this.dayH == dayH) {
+								this.className = "Wselday";
+							} else if (this.month != month || this.year != year) {
+								this.className = "WotherDay";
+							} else if (this.day == 0 || this.day == 6) {
+								this.className = "Wwday";
+							} else {
+								this.className = "Wday";
+							}
+						},
+						show: function() {
+							return "<td class='" + this.className + "' data-year='" + this.year +
+								"' data-month='" + this.month + "' data-dayH='" + this.dayH + "'  >" + this.dayH + "</td>";
+						}
+					}
+					var publicFun = {
+						//重新初始化全局变量
+						repeatInitData: function(times) {
+							nowDate = new Date(times);
+							year = nowDate.getFullYear();
+							month = nowDate.getMonth() + 1;
+							dayH = nowDate.getDate();
+							monthFirstDay = new Date(year, month - 1, 1).getDay();
+						},
+						//获取前num天或者后num天的Date对象
+						getOtherDate: function(num) {
+							var ret = new Date(year + "/" + month + "/" + dayH);
+							ret.setDate(ret.getDate() + num);
+							return ret;
+						},
+						changeAndShow: function() {
+							$(".addTr").remove();
+							strArr.splice(0, strArr.length);
+							showDate();
+							yearShow.val(year + "年");
+							monthShow.val(month + "月");
+							publicFun.bindEvent();
+						},
+						//绑定事件
+						bindEvent: function() {
+							mainTab.find("td").each(function() {
+								var _this = $(this);
+								_this.hover(function() {
+									if (_this.hasClass("Wselday") || _this.hasClass("Wwday") || _this.hasClass("Wday")) {
+										$("td").removeClass("WdayOn").removeClass("WotherDayOn");
+										_this.addClass("WdayOn");
+									} else {
+										$("td").removeClass("WdayOn").removeClass("WotherDayOn");
+										_this.addClass("WotherDayOn");
+									}
+								});
+								_this.click(function(){
+									var _ele = opts.ele;
+									_ele && typeof _ele != "undefined" && (function(){
+										var y = _this.attr("data-year"),
+											m = _this.attr("data-month"),
+											d = _this.attr("data-dayH");
+										_ele.val(y + "-" + m + "-" + d);
+										$("#mainDate").remove();
+									})();
+								});
+							});
+						}
+					};
+
+					function showDate() {
+						strArr.push("<tr class='addTr'>");
+						var flag = monthFirstDay - 1;
+						for (var i = 0; i < monthFirstDay; i++) {
+							var d = new DayTemplate();
+							d.init(publicFun.getOtherDate(-(dayH) - (flag--)));
+							strArr.push(d.show());
+						}
+						var temp = 0;
+						for (var i = monthFirstDay; i < colNum; i++) {
+							var d = new DayTemplate();
+							d.init(publicFun.getOtherDate(-(dayH - 1) + (temp++)));
+							strArr.push(d.show());
+						}
+						strArr.push("</tr>");
+						for (var i = 0; i < rowNum - 1; i++) {
+							strArr.push("<tr class='addTr'>");
+							for (var j = 0; j < colNum; j++) {
+								var d = new DayTemplate();
+								d.init(publicFun.getOtherDate(-(dayH - 1) + (temp++)));
+								strArr.push(d.show());
+							}
+							strArr.push("</tr>");
+						}
+						mainTab.append(strArr.join(""));
+						yearShow.val(year + "年");
+						monthShow.val(month + "月");
+					}
+					
+					showDate();
+					publicFun.bindEvent();
+					
+					yearDown.click(function() {
+						publicFun.repeatInitData(nowDate.setFullYear(year - 1));
+						publicFun.changeAndShow();
+					});
+					yearUp.click(function() {
+						publicFun.repeatInitData(nowDate.setFullYear(year + 1));
+						publicFun.changeAndShow();
+					});
+					monthDown.click(function() {
+						publicFun.repeatInitData(nowDate.setMonth(month - 2));
+						publicFun.changeAndShow();
+					});
+					monthUp.click(function() {
+						publicFun.repeatInitData(nowDate.setMonth(month));
+						publicFun.changeAndShow();
+					});
+					dpClearInput.click(function(){
+						_ele.val("");
+						$("#mainDate").remove();
+					});
+					dpTodayInput.click(function(){
+						var today = new Date(),
+							tY = nowDate.getFullYear(),
+							tM = nowDate.getMonth() + 1,
+							tD = nowDate.getDate();
+						_ele.val(tY + "-" + tM + "-" + tD);
+						$("#mainDate").remove();
+						
+					});
+					dpOkInput.click(function(){
+						
+					});
+				})();
+			}
+			
+			
+			$("#test").click(function(){
+				$(this).dateControl({ele:$(this)});
+			});
+		</script>
+	</body>
+
+</html>

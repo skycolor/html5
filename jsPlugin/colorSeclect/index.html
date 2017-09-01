@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>颜色选择器</title>
+		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+		<style>
+			div.colorpicker {
+				position: absolute;
+				width: 216px;
+				border: 2px solid #c3c9cf;
+				background: #f8f8f8;
+				left: 8px;
+				top: 25px;
+				display: none;
+			}
+			div.colorpicker table {
+				border-collapse: collapse;
+				margin: 0;
+				padding: 0;
+				width: 100%;
+			}
+			div.colorpicker .cell td {
+				height: 12px;
+				width: 12px;
+			}
+			div.colorpicker table td {
+				padding: 0!important;
+			}
+			#colorResult {
+				width: 216px;
+			}
+			#colorView {
+				width: 110px;
+				height: 25px;
+			}
+		</style>
+
+	</head>
+
+	<body bgcolor="#D5F3F4">
+		<input id="color" type="text">
+		<div class="colorpicker">
+			<table id="mainTab">
+			</table>
+			<table id="colorResult">
+				<tbody>
+					<tr>
+						<td id="colorView"></td>
+						<td id="colorCode"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<script>
+			$(function(){
+				var mainTab = $("#mainTab"),
+					colorArr = ['FF', 'CC', '99', '66', '33', '00'],
+					appendArr = new Array(),
+					colorView = $("#colorView"),
+					colorCode = $("#colorCode"),
+					colorpicker = $(".colorpicker"),
+					color = $("#color");
+					
+				//新增小色块
+				function addCol(b,r,g){
+					appendArr.push("<td bgcolor='#" + r + g + b + "'>");
+					appendArr.push("</td>");
+				}
+				
+				//新增行
+				function addRow(b,r){
+					appendArr.push("<tr>");
+					for(var i = 0 ; i < colorArr.length ; i++){
+						addCol(b,r,colorArr[i]);
+					}
+					appendArr.push("</tr>");
+				}
+				
+				//新增大色块
+				function addBlock(b){
+					appendArr.push("<table class='cell'>");
+					for(var i = 0 ; i < colorArr.length ; i++){
+						addRow(b,colorArr[i]);
+					}
+					appendArr.push("</table>")
+				}
+				
+				function init(){
+					appendArr.push("<tr>");
+					for(var i = 0 ; i < 3 ; i++ ){
+						appendArr.push("<td>");
+						addBlock(colorArr[i])
+						appendArr.push("<td>");
+					}
+					appendArr.push("</tr>");
+					for(var i = 3 ; i < 6 ; i++ ){
+						appendArr.push("<td>");
+						addBlock(colorArr[i])
+						appendArr.push("<td>");
+					}
+					appendArr.push("</tr>");
+					mainTab.append(appendArr.join(""));
+				}
+				
+				function bindEvent(){
+					$(".cell td").each(function(){
+						var _this = $(this),
+							bgcolor = _this.attr("bgcolor");
+						if(bgcolor){
+							_this.hover(function(){
+								colorView.attr("bgcolor",bgcolor);
+								colorCode.text(bgcolor);
+							});
+						
+							_this.click(function(){
+								color.val(bgcolor);
+								colorView.attr("bgcolor","");
+								colorCode.text("");
+								colorpicker.css("display","none");
+							});
+						}
+					});
+					
+					mainTab.mouseleave(function(){
+						colorView.attr("bgcolor","");
+						colorCode.text("");
+					})
+					
+					color.focus(function(){
+						colorpicker.css("display","block");
+					})
+					
+				}
+				
+				//初始化页面
+				init();
+				bindEvent();
+			});
+		</script>
+		
+		
+		
+	</body>
+
+</html>

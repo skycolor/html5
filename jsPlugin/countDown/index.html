@@ -13,10 +13,7 @@
     <link href="main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<section class="wrapper">
-    <div class="banner">
-        <img src="929_2016/mainVenue_01.jpg">
-    </div>
+<section class="wrapper" style="margin-top: 20px;">
     <div class="timeBox">
         <img src="929_2016/mainVenue_02.jpg">
         <div class="time">
@@ -67,7 +64,11 @@
 <script type="text/javascript" src="lib.js" ></script>
 <script>
 	$('.timeBox').countDown({
-		endTime : new Date('2016/11/18 00:00:00') ,
+		endTime : (function(){
+			var retDate = new Date();
+			retDate.setDate(retDate.getDate()+2);
+			return retDate;
+		})() ,
 		type : "Y"
 	});
 </script>
