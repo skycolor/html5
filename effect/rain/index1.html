@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>落雨1</title>
+	</head>
+	<style>
+		html {
+			height: 100%;
+		}
+		/* 背景色为渐变色 */
+		body {		
+			height: 100%;
+			margin: 0;
+			overflow: hidden;
+			background: linear-gradient(to bottom, #202020, #111119); 	
+		}
+		/* 整个雨滴的容器，占满屏幕 */
+		.rain {
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 2;
+		}
+		/* 单个雨滴的容器 */
+		.drop {
+			position: absolute;
+			bottom: 100%;
+			width: 15px;
+			height: 120px;
+			pointer-events: none;
+			animation: drop 0.5s linear infinite;
+		}
+		/* vh 单位，可以理解成相对整个屏幕高度的百分比，此为雨滴下落的动画 */
+		@keyframes drop {
+			0% {
+				transform: translateY(0vh);
+			}
+			75% {
+				transform: translateY(90vh);
+			}
+			100% {
+				transform: translateY(90vh);
+			}
+		}
+		/* 细小雨滴的容器，宽度为1px，背景色使用渐变的形式，使看起来像有尾巴似的 */
+		.stem {
+			width: 1px;
+			height: 60%;
+			margin-left: 7px;
+			background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
+			animation: stem 0.5s linear infinite;
+		}
+		/* 细小雨滴的动画，使用整体透明度，模拟雨滴下落时整体变化 */
+		@keyframes stem {
+			0% {
+				opacity: 1;
+			}
+			65% {
+				opacity: 1;
+			}
+			75% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 0;
+			}
+		}
+		/* 雨滴下落到地面上的动画，通过圆角，点状上边框的形式模拟 */
+		.splat {
+			width: 15px;
+			height: 10px;
+			border-top: 2px dotted rgba(255, 255, 255, 0.5);
+			border-radius: 50%;
+			opacity: 1;
+			transform: scale(0);
+			animation: splat 0.5s linear infinite;
+			display: none;
+		}
+		body.splat-toggle .splat {
+			display: block;
+		}
+		@keyframes splat {
+			0% {
+				opacity: 1;
+				transform: scale(0);
+			}
+			80% {
+				opacity: 1;
+				transform: scale(0);
+			}
+			90% {
+				opacity: 0.5;
+				transform: scale(1);
+			}
+			100% {
+				opacity: 0;
+				transform: scale(1.5);
+			}
+		}
+	</style>
+
+	<body class="back-row-toggle splat-toggle">
+		<div class="rain"></div>
+		
+		<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			var makeItRain = function() {
+				var increment = 0;		
+				var totalNum = 90;		//雨滴的个数
+				var drops = "";
+
+				while(increment < totalNum) {
+					//取1到98之间的平均数
+					var randoHundo = (Math.floor(Math.random() * (98 - 1 + 1) + 1));
+					//取2到5之间的平均数
+					var randoFiver = (Math.floor(Math.random() * (5 - 2 + 1) + 2));
+					increment += randoFiver;
+					//添加雨滴对象
+					drops += '<div class="drop" style="left: ' + increment + '%; bottom: ' + (randoFiver + randoFiver - 1 + 100) + '%; animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"><div class="stem" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div><div class="splat" style="animation-delay: 0.' + randoHundo + 's; animation-duration: 0.5' + randoHundo + 's;"></div></div>';
+				}
+				$('.rain').append(drops);
+			}
+			
+			makeItRain();		//开始下雨
+		</script>
+	</body>
+
+</html>
