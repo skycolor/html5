@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>文本效果</title>
+		<style>
+			body {
+				background: black;
+			}
+			
+			span {
+				color: yellow;
+				font-family: monospace;
+			}
+			
+			.blinker {
+				opacity: 1;
+				margin-bottom: -2px;
+				height: 15px;
+				margin-left: -5px;
+				border-left: 7px solid yellow;
+				animation: blinker 0.9s steps(2, start) infinite;
+			}
+			
+			@keyframes blinker {
+				to {
+					visibility: hidden;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<span id="AboutDevTypeText" class="typeing"></span><span class='blinker'>&#32;</span>
+
+		<script>
+			var data = [{
+				AboutDevTypeText: "<span>About Dev Quest<br/><br/>Do you want to go on an epic quest to uncover the magic of coding? Seize the chance to learn about web development and get a scholarship or an internship.</span><br/><br/><br/><span>Are you a developer?<br/> Y / N</span><br/>"
+			}];
+
+			var allElements = document.getElementsByClassName("typeing");
+			for(var j = 0; j < allElements.length; j++) {
+				var currentElementId = allElements[j].id;
+				var currentElementIdContent = data[0][currentElementId];
+				var element = document.getElementById(currentElementId);
+				var devTypeText = currentElementIdContent;
+
+				// type code
+				var i = 0,
+					isTag, text;
+				(function add() {
+					text = devTypeText.slice(0, ++i);
+					if(text === devTypeText) return;
+					element.innerHTML = text + `<span class='blinker'>&#32;</span>`;
+					var char = text.slice(-1);
+					//遇到标签时，直接执行，遇到标签反括号时，则延迟执行
+					if(char === "<") isTag = true;
+					if(char === ">") isTag = false;
+					if(isTag) return add();
+					setTimeout(add, 60);
+				})();
+			}
+			
+			
+		</script>
+
+	</body>
+
+</html>
