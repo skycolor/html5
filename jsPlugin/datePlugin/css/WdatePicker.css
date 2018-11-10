@@ -1,11 +1,1 @@
-.Wdate{
-	border:#999 1px solid;
-	height:20px;
-	background:#fff url(datePicker.gif) no-repeat right;
-}
-.Wdate::-ms-clear{display:none;}
-
-.WdateFmtErr{
-	font-weight:bold;
-	color:red;
-}
+意外错误。未能在撤销／重做时从本地历史记录复原文件内容。
