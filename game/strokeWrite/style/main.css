@@ -1,0 +1,44 @@
+*{margin: 0;padding: 0;}
+#canvas{display:block;margin: 8px auto;}
+#btnsContainer{margin: 0 auto;}
+#btnsContainer .clearBtn{
+	float: right;
+    margin:4px 0 0 4px;
+    border:1px solid #aaa;
+    width:45px;
+    height:20px;
+    line-height:20px;
+    font-size:15px;
+    text-align:center;
+    border-radius: 4px 4px;
+    background-color: white;
+}
+.colorBtn{
+	float: left;
+    margin: 4px 4px 0 0;
+    border:4px solid white;
+    width:20px;
+    height:20px;
+    border-radius: 4px 4px;
+}
+.colorBtn.black{
+    background-color: black;
+}
+.colorBtn.blue{
+    background-color: blue;
+}
+.colorBtn.green{
+    background-color: green;
+}
+.colorBtn.red{
+    background-color: red;
+}
+.colorBtn.orange{
+    background-color: orange;
+}
+.colorBtn.yellow{
+    background-color: yellow;
+}
+.colorBtn.cur{
+	border: 2px solid blueviolet;
+}
